@@ -1,0 +1,36 @@
+version: 2
+
+sources:
+  - name: orders_system
+    schema: source
+    database: dbt_dwh
+    tables:
+      - name: customers
+        columns:
+          - name: CustomerID
+            tests:
+              - unique
+              - not_null
+      - name: products
+        columns:
+          - name: ProductID
+            tests:
+              - unique
+              - not_null
+      - name: orders
+        columns:
+          - name: OrderID
+            tests:
+              - unique
+              - not_null
+      - name: orderdetails
+        columns:
+          - name: OrderDetailID
+            tests:
+              - unique
+              - not_null
+          - name: OrderID
+            tests:
+              - relationship:
+                  to: source('orders_data', 'orders')
+                  field: OrderID
