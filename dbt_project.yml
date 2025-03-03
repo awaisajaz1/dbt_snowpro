@@ -37,3 +37,8 @@ models:
       +snowflake_warehouse: compute_wh
       +snowflake_database: dbt_dwh
       +schema: staging
+    curated:
+      +materialized: table
+      +snowflake_warehouse: compute_wh
+      +snowflake_database: dbt_dwh
+      +schema: curated
