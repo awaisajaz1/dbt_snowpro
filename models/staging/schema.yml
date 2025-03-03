@@ -34,3 +34,6 @@ sources:
               - relationship:
                   to: source('orders_data', 'orders')
                   field: OrderID
+      - name: city
+        columns:
+          - name: CityID
