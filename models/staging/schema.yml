@@ -5,6 +5,9 @@ sources:
     schema: source
     database: dbt_dwh
     tables:
+      - name: city
+        columns:
+          - name: CityID
       - name: customers
         columns:
           - name: CustomerID
@@ -34,6 +37,3 @@ sources:
               - relationship:
                   to: source('orders_data', 'orders')
                   field: OrderID
-      - name: city
-        columns:
-          - name: CityID

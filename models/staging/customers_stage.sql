@@ -9,5 +9,5 @@ SELECT
 FROM
 {{ source('orders_system', 'customers') }} as customers
 left JOIN
-{{ source('orders_system', 'city') }} as city
+{{ ref('city_stage') }} as city
 on customers.City = city.CityID
